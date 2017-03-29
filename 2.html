@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>font</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Arizonia|Tangerine" rel="stylesheet">
+    <style>
+	html {
+	    background-color: #ccffdd;
+	}
+	body {
+	    width: 600px;
+	    margin: 0 auto;
+	    color: #9acd8d;
+	    background-color: #1a8cff;
+	    font-family: 'Tangerine', cursive;
+	    font-size: 25px;
+	    padding: 0 20px 20px 20px;
+	    border: 5px solid black;
+	}
+	h1 {
+	    font-size: 60px;
+	    text-align: center;
+	}
+
+	img {
+	    width: 600px;
+	    height: 400px;
+	}
+    </style>
+</head>
+<body>
+    <h1>Spring</h1>
+    <img src="/Users/kissene/Downloads/03-pic/spring.jpg" alt="spring">
+    <p class="editor-note">Spring is very nice. The feature of spring is:</p>
+    <ul>
+	<li>green</li>
+	<li>flower</li>
+	<li>warm</li>
+    </ul>
+    <p>At the beginning of year,spring is the first season. The weather will be warm, and the nature will wake up. You can learn <a href="http://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=spring">more</a>.</p>
+    <button disabled="disabled">Change user</button>
+    <p>&#163</p>
+
+<script>
+    var myButton = document.querySelector('button');
+    var myHeading = document.querySelector('h1');
+
+    function setUserName() {
+	var myName = prompt('Please enter your name.');
+	localStorage.setItem('name', myName);
+	myHeading.innerHTML = 'Spring is warm, ' + myName;
+    }
+
+    if(!localStorage.getItem('name')) {
+	setUserName();
+    } else {
+	var storedName = localStorage.getItem('name');
+	myHeading.innerHTML = 'Mozilla is cool, ' + storedName;
+    }
+    myButton.onclick = function() {
+	setUserName();
+    }
+</script>
+
+</body>
+</html>
