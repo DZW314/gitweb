@@ -5,6 +5,7 @@
 <!--
         <link rel="shortcut icon" href="./Nerd_Tux_128px_1174607_easyicon.net.ico" type="image/x-icon">
 -->        <title>Webapp</title>
+        <link rel="shortcut icon" href="resources/1174595.png">
         <link rel="stylesheet" href="1.css">
     </head>
     <body>
@@ -18,6 +19,7 @@
           <li><a href="http://cordova.apache.org/" target="_blank">CORDOVA</a></li>
           <li><a href="1.html">MYTEST</a></li>
           <li><a href="2.html">Spring</a></li>
+          <li><a href="time.html">CurrentTime</a></li>
         </ul>
         <form>
           <input type="search" name="q" placeholder="Search query">
@@ -53,6 +55,17 @@ String.prototype.repeatify = String.prototype.repeatify || function(times) {
   }
   return str;
 };
+</script>
+<!--setInterval实时显示时间-->
+<p id="time1" style="color: blueviolet;"></p>
+<script>
+    function mytime(){
+        var a = new Date();
+        var b = a.toLocaleTimeString();
+        var c = a.toLocaleDateString();
+        document.getElementById("time1").innerHTML = c+"&nbsp"+b;
+        }
+    setInterval(function() {mytime()},1000);
 </script>
     </body>
 </html>
